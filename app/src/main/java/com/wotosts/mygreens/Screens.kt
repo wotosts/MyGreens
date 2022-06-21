@@ -1,9 +1,9 @@
 package com.wotosts.mygreens
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.annotation.DrawableRes
 
-enum class Screens(val displayName: String, val icon: ImageVector) {
-    HOME(displayName = "Home", icon = Icons.Filled.Home)
+enum class Screens(val displayName: String, @DrawableRes val icon: Int) {
+    HOME(displayName = "Home", icon = R.drawable.ic_home),
+    ADD(displayName = "New Plant", icon = R.drawable.ic_add),
+    GARDEN(displayName = "Garden", icon = R.drawable.ic_potted_plant)
 }

@@ -6,14 +6,19 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.wotosts.mygreens.home.HomeScreen
 import com.wotosts.mygreens.ui.theme.MyGreensTheme
@@ -49,26 +54,35 @@ private fun MainNavHost(navController: NavHostController, modifier: Modifier = M
         composable(Screens.HOME.name) {
             HomeScreen()
         }
+        composable(Screens.ADD.name) {
+        }
+        composable(Screens.GARDEN.name) {
+        }
     }
 }
 
 @Composable
 private fun MainBottomNavigation(navController: NavHostController) {
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
+    val currentRoute = navBackStackEntry?.destination?.route
+
     BottomNavigation {
         Row {
             Screens.values().forEach {
+                val isSelected = it.name == currentRoute
                 BottomNavigationItem(
-                    selected = it == Screens.HOME,
+                    selected = isSelected,
                     icon = {
                         Icon(
-                            imageVector = it.icon,
-                            contentDescription = it.name
+                            imageVector = ImageVector.vectorResource(id = it.icon),
+                            contentDescription = it.name,
+                            modifier = Modifier.size(24.dp)
                         )
                     },
                     label = {
                         Text(
                             text = it.displayName,
-                            color = Color.White,
+                            color = if(isSelected) Color.Black else Color.Black.copy(alpha = 0.3f),
                             textAlign = TextAlign.Center
                         )
                     },
@@ -84,8 +98,8 @@ private fun MainBottomNavigation(navController: NavHostController) {
                         }
                     },
                     modifier = Modifier.wrapContentSize(align = Alignment.Center),
-                    selectedContentColor = Color.White,
-                    unselectedContentColor = Color.White.copy(alpha = 0.5f)
+                    selectedContentColor = Color.Black,
+                    unselectedContentColor = Color.Black.copy(alpha = 0.3f)
                 )
             }
         }
