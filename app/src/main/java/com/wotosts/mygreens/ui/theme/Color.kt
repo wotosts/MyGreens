@@ -2,7 +2,9 @@ package com.wotosts.mygreens.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EE)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
+val Primary = Color(0xfff0f4c3)
+val PrimaryLight = Color(0xfffffff6)
+val PrimaryDark = Color(0xffbdc192)
+val Secondary = Color(0xffc7e84b)
+val SecondaryLight = Color(0xfffcff7e)
+val SecondaryDark = Color(0xff93b607)
