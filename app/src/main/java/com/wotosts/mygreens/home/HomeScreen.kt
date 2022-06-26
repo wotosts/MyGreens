@@ -23,10 +23,11 @@ import com.wotosts.mygreens.ui.theme.MyGreensTheme
 import com.wotosts.mygreens.ui.theme.PrimaryDark
 import com.wotosts.mygreens.ui.theme.SecondaryDark
 import java.net.URI
+import androidx.lifecycle.viewmodel.compose.viewModel
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun HomeScreen(viewModel: HomeViewModel = HomeViewModel()) {
+fun HomeScreen(viewModel: HomeViewModel = viewModel()) {
     val bottomSheetState = rememberBottomSheetScaffoldState()
     BottomSheetScaffold(
         scaffoldState = bottomSheetState,
