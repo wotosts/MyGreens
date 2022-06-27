@@ -8,12 +8,14 @@ import androidx.compose.foundation.lazy.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -24,6 +26,8 @@ import com.wotosts.mygreens.ui.theme.PrimaryDark
 import com.wotosts.mygreens.ui.theme.SecondaryDark
 import java.net.URI
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.wotosts.mygreens.add.AddPlantActivity
+import com.wotosts.mygreens.utils.startActivity
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -79,10 +83,28 @@ fun PlantNeedWaterList(modifier: Modifier = Modifier, viewModel: HomeViewModel) 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun PlantList(modifier: Modifier = Modifier, viewModel: HomeViewModel) {
+    val context = LocalContext.current
+
     Column(modifier = modifier) {
-        Text(text = "내 식물들~~~")
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(text = "내 식물들~~~")
+            IconButton(
+                onClick = {
+                    context.startActivity<AddPlantActivity>()
+                },
+                modifier = Modifier
+                    .size(36.dp)
+                    .padding(8.dp)
+            ) {
+                Icon(imageVector = Icons.Filled.Add, contentDescription = "Add plant")
+            }
+        }
+
         Spacer(modifier = Modifier.size(16.dp))
-        // 추가버튼 - bottomNav에서 add 제거
         // 검색창
         // 구분
         LazyVerticalGrid(

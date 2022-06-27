@@ -54,8 +54,6 @@ private fun MainNavHost(navController: NavHostController, modifier: Modifier = M
         composable(Screens.HOME.name) {
             HomeScreen()
         }
-        composable(Screens.ADD.name) {
-        }
         composable(Screens.GARDEN.name) {
         }
     }
@@ -66,7 +64,7 @@ private fun MainBottomNavigation(navController: NavHostController) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
 
-    BottomNavigation {
+    BottomNavigation(modifier = Modifier.height(56.dp)) {
         Row {
             Screens.values().forEach {
                 val isSelected = it.name == currentRoute
@@ -82,7 +80,7 @@ private fun MainBottomNavigation(navController: NavHostController) {
                     label = {
                         Text(
                             text = it.displayName,
-                            color = if(isSelected) Color.Black else Color.Black.copy(alpha = 0.3f),
+                            color = if (isSelected) Color.Black else Color.Black.copy(alpha = 0.3f),
                             textAlign = TextAlign.Center
                         )
                     },
@@ -109,7 +107,5 @@ private fun MainBottomNavigation(navController: NavHostController) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    MyGreensTheme {
-        MainScreen()
-    }
+    MainScreen()
 }
