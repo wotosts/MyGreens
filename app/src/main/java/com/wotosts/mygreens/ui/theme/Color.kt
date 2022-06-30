@@ -12,3 +12,6 @@ val SecondaryDark = Color(0xff93b607)
 val LightGray = Color(0xfff5f5f5)
 val Gray = Color(0xffB8B8B8)
 val TextGreen = Color(0xff717A4A)
+
+val Water = Color(0xff74BCFF)
+val Solar = Color(0xffFFB039)
