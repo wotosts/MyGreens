@@ -48,13 +48,17 @@ fun MainScreen() {
 private fun MainNavHost(navController: NavHostController, modifier: Modifier = Modifier) {
     NavHost(
         navController = navController,
-        startDestination = Screens.HOME.name,
+        startDestination = Screens.GARDEN.name,
         modifier = modifier
     ) {
-        composable(Screens.HOME.name) {
+        composable(Screens.GARDEN.name) {
             HomeScreen()
         }
-        composable(Screens.GARDEN.name) {
+        composable(Screens.DIARY.name) {
+
+        }
+        composable(Screens.SETTING.name) {
+
         }
     }
 }
