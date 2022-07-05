@@ -1,4 +1,4 @@
-package com.wotosts.mygreens.home
+package com.wotosts.mygreens.ui.home
 
 import androidx.lifecycle.ViewModel
 import com.wotosts.mygreens.model.Plant

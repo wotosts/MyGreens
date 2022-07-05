@@ -1,4 +1,4 @@
-package com.wotosts.mygreens.home
+package com.wotosts.mygreens.ui.home
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
@@ -26,7 +26,7 @@ import com.wotosts.mygreens.ui.theme.PrimaryDark
 import com.wotosts.mygreens.ui.theme.SecondaryDark
 import java.net.URI
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.wotosts.mygreens.add.AddPlantActivity
+import com.wotosts.mygreens.ui.add.AddPlantActivity
 import com.wotosts.mygreens.utils.startActivity
 
 @OptIn(ExperimentalMaterialApi::class)

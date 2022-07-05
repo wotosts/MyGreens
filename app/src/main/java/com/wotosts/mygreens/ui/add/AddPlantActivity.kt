@@ -1,4 +1,4 @@
-package com.wotosts.mygreens.add
+package com.wotosts.mygreens.ui.add
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

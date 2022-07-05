@@ -1,4 +1,4 @@
-package com.wotosts.mygreens.add
+package com.wotosts.mygreens.ui.add
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

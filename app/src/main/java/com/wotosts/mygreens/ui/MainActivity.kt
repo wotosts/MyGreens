@@ -1,4 +1,4 @@
-package com.wotosts.mygreens
+package com.wotosts.mygreens.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -20,7 +20,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.wotosts.mygreens.home.HomeScreen
+import com.wotosts.mygreens.ui.home.HomeScreen
 import com.wotosts.mygreens.ui.theme.MyGreensTheme
 import dagger.hilt.android.AndroidEntryPoint
 

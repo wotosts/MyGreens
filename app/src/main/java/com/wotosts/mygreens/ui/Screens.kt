@@ -1,6 +1,7 @@
-package com.wotosts.mygreens
+package com.wotosts.mygreens.ui
 
 import androidx.annotation.DrawableRes
+import com.wotosts.mygreens.R
 
 enum class Screens(val displayName: String, @DrawableRes val icon: Int) {
     GARDEN(displayName = "Garden", icon = R.drawable.ic_potted_plant),
