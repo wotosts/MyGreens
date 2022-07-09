@@ -20,6 +20,7 @@ data class Plant(
     val image: String = "",
     val description: String = "",
     val addedDate: Date = Date(),
+    val firstDate: Date = Date(),
     val deathDate: Date? = null,
     val waterLevel: WaterLevel = WaterLevel.MID,
     val solarLevel: SolarLevel = SolarLevel.MID,

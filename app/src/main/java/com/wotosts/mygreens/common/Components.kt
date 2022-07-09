@@ -1,13 +1,15 @@
 package com.wotosts.mygreens.common
 
+import android.content.Context
 import android.view.MotionEvent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.OutlinedTextField
-import androidx.compose.material.Text
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
@@ -22,6 +24,44 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.wotosts.mygreens.ui.theme.Gray
 import com.wotosts.mygreens.ui.theme.TextGreen
+
+@Composable
+fun MyGreensAppBar(
+    context: Context,
+    isBackButtonVisible: Boolean = true,
+    title: String,
+    menu: @Composable () -> Unit
+) {
+    Row(
+        modifier = Modifier
+            .height(56.dp)
+            .fillMaxWidth()
+            .background(Color.White),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        if (isBackButtonVisible) {
+            IconButton(
+                onClick = { (context as? AppCompatActivity)?.finish() },
+                modifier = Modifier
+                    .size(56.dp)
+                    .padding(8.dp)
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.ArrowBack,
+                    contentDescription = "Back",
+                    tint = Color.Black
+                )
+            }
+        }
+        Text(
+            text = title,
+            color = Color.Black,
+            textAlign = TextAlign.Center
+        )
+        menu()
+    }
+}
 
 @Composable
 fun CommonTextField(

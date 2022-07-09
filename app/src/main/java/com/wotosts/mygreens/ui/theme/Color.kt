@@ -15,3 +15,5 @@ val TextGreen = Color(0xff717A4A)
 
 val Water = Color(0xff74BCFF)
 val Solar = Color(0xffFFB039)
+val Nutrient = Color(0xffB00F0F)
+val Pot = Color(0xff885D6F)

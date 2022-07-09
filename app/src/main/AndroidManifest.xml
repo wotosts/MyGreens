@@ -11,14 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyGreens">
         <activity
-            android:name=".add.AddPlantActivity"
-            android:theme="@style/Theme.MyGreens.NoActionBar"
-            android:exported="false" />
+            android:name=".ui.detail.PlantDetailActivity"/>
         <activity
-            android:name=".MainActivity"
+            android:name="com.wotosts.mygreens.ui.add.AddPlantActivity" />
+        <activity
+            android:name=".ui.MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.MyGreens.NoActionBar">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
